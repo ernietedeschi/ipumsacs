@@ -1,3 +1,5 @@
+ssc install egenmore
+
 gen sample = age >= 18 & citizen >= 0 & citizen <= 2
 
 bysort statefip: egen mhi = wpctile(hhincome), p(50) weights(hhwt)
@@ -17,9 +19,9 @@ replace p_age = 4 if age >= 41 & age < 46
 replace p_age = 2 if age >= 46 & age < 51
 
 gen p_edu = 0
-replace p_edu = 1 if educd >= 62 & educd <= 64
-replace p_edu = 6 if educd == 101   // ASSUME EVERY BA IS US
-replace p_edu = 8 if educd == 114 & stem == 1  // ASSUME EVERY MS IS US
+replace p_edu = 1 if educd >= 62
+replace p_edu = 6 if educd >= 101   // ASSUME EVERY BA IS US
+replace p_edu = 8 if educd >= 114 & stem == 1  // ASSUME EVERY MS IS US
 replace p_edu = 13 if (educd == 115 & (degfield == 62 | degfield == 32)) | (educd == 116 & stem == 1)
 
 gen p_eng = 0
