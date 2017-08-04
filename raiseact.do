@@ -38,4 +38,4 @@ gen p_total = p_age + p_edu + p_eng + p_inc
 gen success = p_total >= 30 & p_total != .
 
 tabulate success if sample == 1 [iw=perwt]
-histogram p_total if citizen == 1 & sample == 1 [fw=perwt], width(5)
+histogram p_total if sample == 1 [fw=perwt], width(5)
