@@ -39,8 +39,8 @@ replace p_edu = 13 if (educd == 115 & (degfield == 62 | degfield == 32)) | (educ
 ** GENERATE ENGLISH POINTS
 gen p_eng = 0
 replace p_eng = 12 if speakeng == 3     // English-only speakers get highest points
-replace p_eng = 10 if speakeng == 4     // Speaks "very well" gets 2nd highest points
-replace p_eng = 6 if speakeng == 5      // Speaks "well" gets 3rd highest points
+replace p_eng = 10 if speakeng == 4     // Speaks "very well" gets 3rd highest points
+replace p_eng = 6 if speakeng == 5      // Speaks "well" gets 4th highest points
 
 ** GENERATE INCOME POINTS
 gen p_inc = 0
